@@ -48,5 +48,5 @@ run_analysis<-function(){
     grouped_df_skim<-group_by(df_skim,SubjectID,ActivityLabel)
     df_tidy<-summarise_all(grouped_df_skim,mean)
 
-    write.table("./tidyLodato.txt",row.names = FALSE)
+    write.table(df_tidy,"./tidyLodato.txt",row.names = FALSE)
 }
