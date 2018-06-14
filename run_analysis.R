@@ -30,8 +30,8 @@ run_analysis<-function(){
     
     #Step 3
     ## Getting the names and initialise a vector of names
-    dflabels<-read.table("../UCI HAR Dataset/activity_labels.txt",stringsAsFactors = FALSE)
-    labelnames<-dflabes[,2]
+    df_labels<-read.table("../UCI HAR Dataset/activity_labels.txt",stringsAsFactors = FALSE)
+    labelnames<-df_labels[,2]
     ## Uses descriptive activity names to name the activities in the data set
     df_skim$ActivityLabel<-labelnames[df_skim$ActivityLabel]
 
