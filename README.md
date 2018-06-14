@@ -32,4 +32,4 @@ Subtract, from the columns name, the characters (, ), - (substituted with a "." 
 Step 5.
 Group df_skim by SubjectID and Activity and rendered Tidy by means of "summarise_all" function used with the function "mean"
 
-Returns the newly created tidy dataframe, df_tidy
+writes the tidy dataset to a file tidyLodato.txt

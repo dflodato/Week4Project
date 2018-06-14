@@ -47,7 +47,6 @@ run_analysis<-function(){
     ## with the average of each variable for each activity and each subject.
     grouped_df_skim<-group_by(df_skim,SubjectID,ActivityLabel)
     df_tidy<-summarise_all(grouped_df_skim,mean)
-    df_tidy
-    
-    
+
+    write.table("./tidyLodato.txt",row.names = FALSE)
 }
