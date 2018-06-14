@@ -3,15 +3,15 @@ library(dplyr)
 run_analysis<-function(){
     ##Step 1 
     ## Getting the files in the proper directory for the train dataset
-    dftrain<-read.table("../UCI HAR Dataset/train/subject_train.txt",col.names = "SubjectID")
-    df2train<-read.table("../UCI HAR Dataset/train/y_train.txt",col.names= "ActivityLabel")
-    df3train<-read.table("../UCI HAR Dataset/train/X_train.txt")
+    dftrain<-read.table("train/subject_train.txt",col.names = "SubjectID")
+    df2train<-read.table("train/y_train.txt",col.names= "ActivityLabel")
+    df3train<-read.table("train/X_train.txt")
     ## Binding by columns the three variables for the "training dataset"
     dftot_train<-cbind(dftrain,df2train,df3train)
     ## Getting the files in the proper directory for the train dataset
-    dftest<-read.table("../UCI HAR Dataset/test/subject_test.txt",col.names = "SubjectID")
-    df2test<-read.table("../UCI HAR Dataset/test/y_test.txt",col.names= "ActivityLabel")
-    df3test<-read.table("../UCI HAR Dataset/test/X_test.txt")
+    dftest<-read.table("test/subject_test.txt",col.names = "SubjectID")
+    df2test<-read.table("test/y_test.txt",col.names= "ActivityLabel")
+    df3test<-read.table("test/X_test.txt")
     ## Binding by columns the three variables for the "test dataset"
     dftot_test<-cbind(dftest,df2test,df3test)
 
@@ -20,7 +20,7 @@ run_analysis<-function(){
 
     #Step 2
     ## Getting the names of the V1, ..., V561 variables
-    dfnames<-read.table("../UCI HAR Dataset/features.txt",col.names = c("VariableNum","VariableName"))
+    dfnames<-read.table("features.txt",col.names = c("VariableNum","VariableName"))
     dfnames<-subset(dfnames, select="VariableName")
     ## Assigning the Vi names to the columns name of the total dataset
     vectornames<-c("SubjectID","ActivityLabel",as.character(dfnames$VariableName))
@@ -30,7 +30,7 @@ run_analysis<-function(){
     
     #Step 3
     ## Getting the names and initialise a vector of names
-    df_labels<-read.table("../UCI HAR Dataset/activity_labels.txt",stringsAsFactors = FALSE)
+    df_labels<-read.table("activity_labels.txt",stringsAsFactors = FALSE)
     labelnames<-df_labels[,2]
     ## Uses descriptive activity names to name the activities in the data set
     df_skim$ActivityLabel<-labelnames[df_skim$ActivityLabel]

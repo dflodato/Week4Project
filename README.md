@@ -1,7 +1,6 @@
 # Week4Project
-The script works under the assumption that you have your code in a certain folder and 
-that the data are stored in a directory with relative path "../UCI HAR Dataset" 
-with respect to the path of the script.
+
+This script fulfills the requirements for the wee4 project of the course Getting and Cleaning Data
 
 Step 1.
 The subject_train(test), y_train(test), and X_train(test) files are read from
